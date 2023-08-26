@@ -24,6 +24,7 @@ const Card = ({ user }: PropsType) => {
   };
 
   const setId = (id: (typeof user)["_id"]) => {
+    console.log(id);
     dispatch(readId({ id }));
   };
 

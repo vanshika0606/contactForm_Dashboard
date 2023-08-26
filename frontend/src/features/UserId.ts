@@ -20,9 +20,9 @@ const UserIdSlice = createSlice({
   initialState,
   reducers: {
     readId(state, action) {
-      const { _id } = action.payload;
+      const { id } = action.payload;
 
-      state.id = _id;
+      state.id = id;
     },
     readDataForUpdate(state, action) {
       const { _id, firstName, lastName, status } = action.payload;
