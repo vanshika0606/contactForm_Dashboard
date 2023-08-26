@@ -2,7 +2,7 @@ import express from "express";
 import http from "http";
 import mongoose from "mongoose";
 import { config } from "./config/config";
-import userRoutes from "./routes/User"
+import userRoutes from "./routes/User";
 
 const router = express();
 // console.log("server");
