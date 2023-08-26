@@ -1,12 +1,12 @@
-import React from 'react'
-import { Outlet } from "react-router-dom"
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const ContactPage = () => {
-    return (
-        <div>
-            <Outlet />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Outlet />
+    </div>
+  );
+};
 
-export default ContactPage
+export default ContactPage;

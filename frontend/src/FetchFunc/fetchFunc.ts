@@ -1,3 +1,5 @@
+import { initial } from "../features/UserId";
+
 export const getLists = async () => {
   const result = await fetch("http://localhost:9990/api/get")
     .then((res) => {
@@ -57,9 +59,9 @@ export const deleteUser = async (id: id) => {
   return result;
 };
 
-export const updateUser = async( body: body) => {
-  const { firstName, lastName, status} = body;
-  const result = await fetch("http://localhost:9990/api/update/" , {
+export const updateUser = async (body: initial) => {
+  const { firstName, lastName, status, id } = body;
+  const result = await fetch("http://localhost:9990/api/update/" + id, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -76,4 +78,4 @@ export const updateUser = async( body: body) => {
     });
 
   return result;
-}
+};
