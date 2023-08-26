@@ -9,4 +9,4 @@ router.get("/get", controller.readAllUser);
 router.patch("/update/:userId", controller.updateUser);
 router.delete("/delete/:userId", controller.deleteUser);
 
-export = router;
+export default router;
