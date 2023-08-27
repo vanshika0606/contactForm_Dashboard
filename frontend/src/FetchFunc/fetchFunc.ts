@@ -1,7 +1,9 @@
 import { initial } from "../features/UserId";
 
+const BASE_URL = "https://contactform-wnpu.onrender.com"
+
 export const getLists = async () => {
-  const result = await fetch("http://localhost:9990/api/get")
+  const result = await fetch(BASE_URL+"/api/get")
     .then((res) => {
       return res.json();
     })
@@ -14,7 +16,7 @@ export const getLists = async () => {
 
 export const postContact = async (body: body) => {
   const { firstName, lastName, status } = body;
-  const result = await fetch("http://localhost:9990/api/create", {
+  const result = await fetch(BASE_URL +"/api/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -34,7 +36,7 @@ export const postContact = async (body: body) => {
 };
 
 export const getUser = async (id: id) => {
-  const result = await fetch("http://localhost:9990/api/get/" + id)
+  const result = await fetch(BASE_URL+"/api/get/" + id)
     .then((res) => {
       return res.json();
     })
@@ -46,7 +48,7 @@ export const getUser = async (id: id) => {
 };
 
 export const deleteUser = async (id: id) => {
-  const result = await fetch("http://localhost:9990/api/delete/" + id, {
+  const result = await fetch(BASE_URL + "/api/delete/" + id, {
     method: "DELETE",
   })
     .then((res) => {
@@ -61,7 +63,7 @@ export const deleteUser = async (id: id) => {
 
 export const updateUser = async (body: initial) => {
   const { firstName, lastName, status, id } = body;
-  const result = await fetch("http://localhost:9990/api/update/" + id, {
+  const result = await fetch(BASE_URL + "/api/update/" + id, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
